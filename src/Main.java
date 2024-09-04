@@ -20,9 +20,12 @@ public class Main {
             String login = sc.nextLine();
             System.out.println("Senha: ");
             String senha = sc.nextLine();
-
+            // mandando login e senha pra verificação dentro do logar.java
             logar Logar = new logar();
             logar.realizarLogin(login, senha);
+            // pegando o usuario logado e enviando para Cena.java para descobrirmos a cena que ele está e dar continuidade.
+            Cena cena = new Cena();
+            Cena.save(login);
 
         } else {
             // Novo jogo
@@ -33,7 +36,7 @@ public class Main {
 
             Registro registro = new Registro();
             try {
-                registro.registrar(login, senha);
+                Registro.registrar(login, senha);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
