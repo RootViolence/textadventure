@@ -25,7 +25,7 @@ public class Registro {
                     System.out.println("Infelizmente este usuário já existe.");
                 } else {
                     // String sql insert para inserir usuario novo
-                    String sql = "INSERT INTO usuarios (login, senha, cena_id) VALUES (?, ?, 1)";
+                    String sql = "INSERT INTO usuarios (login, senha) VALUES (?, ?)";
 
                     try (PreparedStatement insertStmt = conn.prepareStatement(sql)) {
                         // Inserindo login e senha
